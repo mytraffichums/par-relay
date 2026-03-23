@@ -300,7 +300,8 @@ const TryIt: NextPage = () => {
         if (!paymentReqHeader) throw new Error("No x-payment-required header");
 
         const requirement = JSON.parse(atob(paymentReqHeader));
-        addLog(`  payment: ${requirement.maxAmountRequired} USDC units to ${requirement.payTo?.slice(0, 10)}...`, "#cc66ff", 1);
+        const usdcAmount = (Number(requirement.maxAmountRequired) / 1e6).toFixed(4);
+        addLog(`  payment: ${usdcAmount} USDC to ${requirement.payTo?.slice(0, 10)}...`, "#cc66ff", 1);
 
         // Sign EIP-712 TransferWithAuthorization
         const now = Math.floor(Date.now() / 1000);
