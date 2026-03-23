@@ -127,39 +127,51 @@ def _build_payment_required() -> dict:
         "resource": "/forward",
         "description": f"Onion relay hop via {RELAY_NAME}",
         "mimeType": "application/json",
+        "maxTimeoutSeconds": 60,
         "nonce": uuid.uuid4().hex,
     }
 
 
-async def _verify_payment(payment_header: str) -> bool:
-    """Verify x402 payment via the facilitator."""
+async def _verify_payment(payment_header: str) -> tuple[bool, str]:
+    """Verify x402 payment via the facilitator. Returns (valid, detail)."""
     if not WALLET_ADDRESS:
-        return True  # x402 disabled if no wallet configured
+        return True, "no wallet configured"
 
     try:
-        payload = json.loads(base64.b64decode(payment_header))
+        payment_payload = json.loads(base64.b64decode(payment_header))
 
         # Build requirement matching what the client signed — use the nonce
         # from the client's payment so the facilitator sees a consistent pair.
         requirement = _build_payment_required()
-        client_nonce = payload.get("payload", {}).get("authorization", {}).get("nonce", "")
+        client_nonce = payment_payload.get("payload", {}).get("authorization", {}).get("nonce", "")
         if client_nonce:
             requirement["nonce"] = client_nonce
+
+        verify_body = {
+            "paymentPayload": payment_payload,
+            "paymentRequirements": requirement,
+        }
+        print(f"[{RELAY_NAME}] x402 verify request: {json.dumps(verify_body, indent=2)[:500]}")
 
         async with httpx.AsyncClient(timeout=15) as client:
             resp = await client.post(
                 f"{FACILITATOR_URL}/verify",
-                json={
-                    "payload": payload,
-                    "paymentRequirements": [requirement],
-                },
+                json=verify_body,
             )
-        if resp.status_code != 200:
-            print(f"[{RELAY_NAME}] x402 verify rejected: {resp.status_code} {resp.text}")
-        return resp.status_code == 200
+        resp_body = resp.text
+        print(f"[{RELAY_NAME}] x402 verify response: {resp.status_code} {resp_body[:300]}")
+
+        if resp.status_code == 200:
+            result = resp.json()
+            if result.get("isValid", False):
+                return True, "valid"
+            return False, result.get("invalidReason", "unknown")
+        return False, f"facilitator returned {resp.status_code}: {resp_body[:200]}"
     except Exception as exc:
+        import traceback
         print(f"[{RELAY_NAME}] x402 verify failed: {exc}")
-        return False
+        traceback.print_exc()
+        return False, str(exc)
 
 
 @app.post("/forward")
@@ -176,9 +188,10 @@ async def forward(request: Request):
                 headers={"X-PAYMENT-REQUIRED": encoded},
             )
 
-        if not await _verify_payment(payment_header):
+        verified, verify_detail = await _verify_payment(payment_header)
+        if not verified:
             return JSONResponse(
-                {"error": "payment verification failed"},
+                {"error": f"payment verification failed: {verify_detail}"},
                 status_code=402,
             )
 
