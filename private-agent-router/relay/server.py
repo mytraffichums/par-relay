@@ -138,14 +138,24 @@ async def _verify_payment(payment_header: str) -> bool:
 
     try:
         payload = json.loads(base64.b64decode(payment_header))
+
+        # Build requirement matching what the client signed — use the nonce
+        # from the client's payment so the facilitator sees a consistent pair.
+        requirement = _build_payment_required()
+        client_nonce = payload.get("payload", {}).get("authorization", {}).get("nonce", "")
+        if client_nonce:
+            requirement["nonce"] = client_nonce
+
         async with httpx.AsyncClient(timeout=15) as client:
             resp = await client.post(
                 f"{FACILITATOR_URL}/verify",
                 json={
                     "payload": payload,
-                    "paymentRequirements": [_build_payment_required()],
+                    "paymentRequirements": [requirement],
                 },
             )
+        if resp.status_code != 200:
+            print(f"[{RELAY_NAME}] x402 verify rejected: {resp.status_code} {resp.text}")
         return resp.status_code == 200
     except Exception as exc:
         print(f"[{RELAY_NAME}] x402 verify failed: {exc}")
