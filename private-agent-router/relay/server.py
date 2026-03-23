@@ -70,9 +70,10 @@ CONFIG_PATH = Path(__file__).resolve().parent.parent / "config.json"
 # x402 payment config
 WALLET_ADDRESS: str = os.environ.get("RELAY_WALLET_ADDRESS", "")
 PRICE_PER_HOP: str = os.environ.get("RELAY_PRICE_PER_HOP", "10000")  # 0.01 USDC
-FACILITATOR_URL: str = os.environ.get("X402_FACILITATOR_URL", "https://x402.org/facilitator")
 USDC_BASE_SEPOLIA: str = "0x036CbD53842c5426634e7929541eC2318f3dCF7e"
 BASE_SEPOLIA_CHAIN: str = "eip155:84532"
+# Shared secret for relay-to-relay forwarding (skips payment gate)
+RELAY_SECRET: str = os.environ.get("RELAY_SECRET", "par-relay-internal-2024")
 
 
 @app.on_event("startup")
@@ -172,8 +173,9 @@ def _verify_payment_locally(payment_token: str) -> tuple[bool, str]:
 async def forward(request: Request):
     body = await request.json()
 
-    # x402 payment gate
-    if WALLET_ADDRESS:
+    # x402 payment gate (skip if relay-to-relay secret is present)
+    relay_secret = body.get("relay_secret")
+    if WALLET_ADDRESS and relay_secret != RELAY_SECRET:
         # Accept payment from body field OR header (body preferred for CORS)
         payment_token = body.get("payment") or request.headers.get("x-payment")
         if not payment_token:
@@ -205,14 +207,14 @@ async def forward(request: Request):
     if layer.get("exit"):
         return await _handle_exit(layer, response_pubkey)
 
-    # Forward to next relay
+    # Forward to next relay (include relay secret to skip payment gate)
     next_hop = layer.get("next_hop")
     inner_payload = layer.get("payload", "")
     try:
         async with httpx.AsyncClient(timeout=30) as client:
             resp = await client.post(
                 f"{next_hop}/forward",
-                json={"payload": inner_payload},
+                json={"payload": inner_payload, "relay_secret": RELAY_SECRET},
             )
         resp_data = resp.json()
 
