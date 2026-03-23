@@ -64,4 +64,4 @@ No single relay sees both the sender and the destination.
 
 See [SKILL.md](private-agent-router/SKILL.md) for the full agent-readable interface. No SDK needed - just an HTTP client, NaCl encryption, and an EIP-3009 signer.
 
-Built for [The Synthesis](https://synthesis.md/).
+Built for [Synthesis](https://synthesis.md/).
