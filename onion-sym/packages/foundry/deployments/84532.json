@@ -1,0 +1,7 @@
+{
+  "networkName": "base-sepolia",
+  "0x65133639e5d57b2de6703fa701e8cb7565754e6d": "SpendingPolicy",
+  "0x1a78ef103b529c2a6fe8f3db97e1f7692a875092": "BlindTokenVault",
+  "0x78f42b581f590a22ab42d26d35827586597b3dcc": "AuditLog",
+  "0xa49a8a7e5727b0402e4590cb498b51da03a4d309": "RelayRegistry"
+}

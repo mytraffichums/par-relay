@@ -1,0 +1,1093 @@
+[
+  {
+    "timestamp": "2026-03-22T15:06:41.503862",
+    "endpoint": "/weather",
+    "method": "GET",
+    "client_host": "127.0.0.1",
+    "client_port": 34474,
+    "headers": {
+      "host": "127.0.0.1:9000",
+      "user-agent": "curl/8.5.0",
+      "accept": "*/*"
+    },
+    "query_params": {
+      "city": "test"
+    },
+    "path": "/weather",
+    "full_url": "http://127.0.0.1:9000/weather?city=test"
+  },
+  {
+    "timestamp": "2026-03-22T15:08:16.664279",
+    "endpoint": "/weather",
+    "method": "GET",
+    "client_host": "127.0.0.1",
+    "client_port": 53614,
+    "headers": {
+      "host": "127.0.0.1:9000",
+      "accept": "*/*",
+      "accept-encoding": "gzip, deflate",
+      "connection": "keep-alive",
+      "user-agent": "python-httpx/0.28.1"
+    },
+    "query_params": {
+      "city": "Tokyo"
+    },
+    "path": "/weather",
+    "full_url": "http://127.0.0.1:9000/weather?city=Tokyo"
+  },
+  {
+    "timestamp": "2026-03-22T15:08:16.806126",
+    "endpoint": "/flights",
+    "method": "GET",
+    "client_host": "127.0.0.1",
+    "client_port": 53630,
+    "headers": {
+      "host": "127.0.0.1:9000",
+      "accept": "*/*",
+      "accept-encoding": "gzip, deflate",
+      "connection": "keep-alive",
+      "user-agent": "python-httpx/0.28.1"
+    },
+    "query_params": {
+      "origin": "LHR",
+      "destination": "NRT"
+    },
+    "path": "/flights",
+    "full_url": "http://127.0.0.1:9000/flights?origin=LHR&destination=NRT"
+  },
+  {
+    "timestamp": "2026-03-22T15:08:16.937587",
+    "endpoint": "/book",
+    "method": "POST",
+    "client_host": "127.0.0.1",
+    "client_port": 53636,
+    "headers": {
+      "host": "127.0.0.1:9000",
+      "accept": "*/*",
+      "accept-encoding": "gzip, deflate",
+      "connection": "keep-alive",
+      "user-agent": "python-httpx/0.28.1",
+      "content-length": "43",
+      "content-type": "application/json"
+    },
+    "query_params": {
+      "flight": "PA303",
+      "passenger": "AgentSmith"
+    },
+    "path": "/book",
+    "full_url": "http://127.0.0.1:9000/book"
+  },
+  {
+    "timestamp": "2026-03-22T15:08:17.083558",
+    "endpoint": "/weather",
+    "method": "GET",
+    "client_host": "127.0.0.1",
+    "client_port": 53650,
+    "headers": {
+      "host": "127.0.0.1:9000",
+      "accept": "*/*",
+      "accept-encoding": "gzip, deflate",
+      "connection": "keep-alive",
+      "user-agent": "python-httpx/0.28.1"
+    },
+    "query_params": {
+      "city": "Berlin"
+    },
+    "path": "/weather",
+    "full_url": "http://127.0.0.1:9000/weather?city=Berlin"
+  },
+  {
+    "timestamp": "2026-03-22T15:08:17.152135",
+    "endpoint": "/weather",
+    "method": "GET",
+    "client_host": "127.0.0.1",
+    "client_port": 53666,
+    "headers": {
+      "host": "127.0.0.1:9000",
+      "accept": "*/*",
+      "accept-encoding": "gzip, deflate",
+      "connection": "keep-alive",
+      "user-agent": "python-httpx/0.28.1"
+    },
+    "query_params": {
+      "city": "Tokyo"
+    },
+    "path": "/weather",
+    "full_url": "http://127.0.0.1:9000/weather?city=Tokyo"
+  },
+  {
+    "timestamp": "2026-03-22T15:08:17.229855",
+    "endpoint": "/flights",
+    "method": "GET",
+    "client_host": "127.0.0.1",
+    "client_port": 53670,
+    "headers": {
+      "host": "127.0.0.1:9000",
+      "accept": "*/*",
+      "accept-encoding": "gzip, deflate",
+      "connection": "keep-alive",
+      "user-agent": "python-httpx/0.28.1"
+    },
+    "query_params": {
+      "origin": "LHR",
+      "destination": "NRT"
+    },
+    "path": "/flights",
+    "full_url": "http://127.0.0.1:9000/flights?origin=LHR&destination=NRT"
+  },
+  {
+    "timestamp": "2026-03-22T15:08:17.282867",
+    "endpoint": "/book",
+    "method": "POST",
+    "client_host": "127.0.0.1",
+    "client_port": 53674,
+    "headers": {
+      "host": "127.0.0.1:9000",
+      "accept": "*/*",
+      "accept-encoding": "gzip, deflate",
+      "connection": "keep-alive",
+      "user-agent": "python-httpx/0.28.1",
+      "content-length": "43",
+      "content-type": "application/json"
+    },
+    "query_params": {
+      "flight": "PA303",
+      "passenger": "AgentSmith"
+    },
+    "path": "/book",
+    "full_url": "http://127.0.0.1:9000/book"
+  },
+  {
+    "timestamp": "2026-03-22T15:08:17.355288",
+    "endpoint": "/weather",
+    "method": "GET",
+    "client_host": "127.0.0.1",
+    "client_port": 53684,
+    "headers": {
+      "host": "127.0.0.1:9000",
+      "accept": "*/*",
+      "accept-encoding": "gzip, deflate",
+      "connection": "keep-alive",
+      "user-agent": "python-httpx/0.28.1"
+    },
+    "query_params": {
+      "city": "Berlin"
+    },
+    "path": "/weather",
+    "full_url": "http://127.0.0.1:9000/weather?city=Berlin"
+  },
+  {
+    "timestamp": "2026-03-22T15:21:27.218753",
+    "endpoint": "/weather",
+    "method": "GET",
+    "client_host": "127.0.0.1",
+    "client_port": 56686,
+    "headers": {
+      "host": "127.0.0.1:9000",
+      "user-agent": "curl/8.5.0",
+      "accept": "*/*"
+    },
+    "query_params": {
+      "city": "boot"
+    },
+    "path": "/weather",
+    "full_url": "http://127.0.0.1:9000/weather?city=boot"
+  },
+  {
+    "timestamp": "2026-03-22T15:22:31.211535",
+    "endpoint": "/weather",
+    "method": "GET",
+    "client_host": "127.0.0.1",
+    "client_port": 53804,
+    "headers": {
+      "host": "127.0.0.1:9000",
+      "user-agent": "curl/8.5.0",
+      "accept": "*/*"
+    },
+    "query_params": {
+      "city": "x"
+    },
+    "path": "/weather",
+    "full_url": "http://127.0.0.1:9000/weather?city=x"
+  },
+  {
+    "timestamp": "2026-03-22T15:24:16.107764",
+    "endpoint": "/weather",
+    "method": "GET",
+    "client_host": "127.0.0.1",
+    "client_port": 60464,
+    "headers": {
+      "host": "localhost:9000",
+      "connection": "keep-alive",
+      "sec-ch-ua-platform": "\"Linux\"",
+      "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36",
+      "sec-ch-ua": "\"Not-A.Brand\";v=\"24\", \"Chromium\";v=\"146\"",
+      "sec-ch-ua-mobile": "?0",
+      "accept": "*/*",
+      "origin": "http://localhost:3000",
+      "sec-fetch-site": "same-site",
+      "sec-fetch-mode": "cors",
+      "sec-fetch-dest": "empty",
+      "referer": "http://localhost:3000/",
+      "accept-encoding": "gzip, deflate, br, zstd",
+      "accept-language": "en-US,en;q=0.9"
+    },
+    "query_params": {
+      "city": "Tokyo"
+    },
+    "path": "/weather",
+    "full_url": "http://localhost:9000/weather?city=Tokyo"
+  },
+  {
+    "timestamp": "2026-03-22T15:24:21.912333",
+    "endpoint": "/flights",
+    "method": "GET",
+    "client_host": "127.0.0.1",
+    "client_port": 53896,
+    "headers": {
+      "host": "localhost:9000",
+      "connection": "keep-alive",
+      "sec-ch-ua-platform": "\"Linux\"",
+      "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36",
+      "sec-ch-ua": "\"Not-A.Brand\";v=\"24\", \"Chromium\";v=\"146\"",
+      "sec-ch-ua-mobile": "?0",
+      "accept": "*/*",
+      "origin": "http://localhost:3000",
+      "sec-fetch-site": "same-site",
+      "sec-fetch-mode": "cors",
+      "sec-fetch-dest": "empty",
+      "referer": "http://localhost:3000/",
+      "accept-encoding": "gzip, deflate, br, zstd",
+      "accept-language": "en-US,en;q=0.9"
+    },
+    "query_params": {
+      "origin": "LHR",
+      "destination": "NRT"
+    },
+    "path": "/flights",
+    "full_url": "http://localhost:9000/flights?origin=LHR&destination=NRT"
+  },
+  {
+    "timestamp": "2026-03-22T15:24:33.517672",
+    "endpoint": "/weather",
+    "method": "GET",
+    "client_host": "127.0.0.1",
+    "client_port": 55182,
+    "headers": {
+      "host": "localhost:9000",
+      "connection": "keep-alive",
+      "sec-ch-ua-platform": "\"Linux\"",
+      "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36",
+      "sec-ch-ua": "\"Not-A.Brand\";v=\"24\", \"Chromium\";v=\"146\"",
+      "sec-ch-ua-mobile": "?0",
+      "accept": "*/*",
+      "origin": "http://localhost:3000",
+      "sec-fetch-site": "same-site",
+      "sec-fetch-mode": "cors",
+      "sec-fetch-dest": "empty",
+      "referer": "http://localhost:3000/",
+      "accept-encoding": "gzip, deflate, br, zstd",
+      "accept-language": "en-US,en;q=0.9"
+    },
+    "query_params": {
+      "city": "Berlin"
+    },
+    "path": "/weather",
+    "full_url": "http://localhost:9000/weather?city=Berlin"
+  },
+  {
+    "timestamp": "2026-03-22T15:24:37.419089",
+    "endpoint": "/weather",
+    "method": "GET",
+    "client_host": "127.0.0.1",
+    "client_port": 55182,
+    "headers": {
+      "host": "localhost:9000",
+      "connection": "keep-alive",
+      "sec-ch-ua-platform": "\"Linux\"",
+      "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36",
+      "sec-ch-ua": "\"Not-A.Brand\";v=\"24\", \"Chromium\";v=\"146\"",
+      "sec-ch-ua-mobile": "?0",
+      "accept": "*/*",
+      "origin": "http://localhost:3000",
+      "sec-fetch-site": "same-site",
+      "sec-fetch-mode": "cors",
+      "sec-fetch-dest": "empty",
+      "referer": "http://localhost:3000/",
+      "accept-encoding": "gzip, deflate, br, zstd",
+      "accept-language": "en-US,en;q=0.9"
+    },
+    "query_params": {
+      "city": "Tokyo"
+    },
+    "path": "/weather",
+    "full_url": "http://localhost:9000/weather?city=Tokyo"
+  },
+  {
+    "timestamp": "2026-03-22T15:24:39.019905",
+    "endpoint": "/flights",
+    "method": "GET",
+    "client_host": "127.0.0.1",
+    "client_port": 55182,
+    "headers": {
+      "host": "localhost:9000",
+      "connection": "keep-alive",
+      "sec-ch-ua-platform": "\"Linux\"",
+      "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36",
+      "sec-ch-ua": "\"Not-A.Brand\";v=\"24\", \"Chromium\";v=\"146\"",
+      "sec-ch-ua-mobile": "?0",
+      "accept": "*/*",
+      "origin": "http://localhost:3000",
+      "sec-fetch-site": "same-site",
+      "sec-fetch-mode": "cors",
+      "sec-fetch-dest": "empty",
+      "referer": "http://localhost:3000/",
+      "accept-encoding": "gzip, deflate, br, zstd",
+      "accept-language": "en-US,en;q=0.9"
+    },
+    "query_params": {
+      "origin": "LHR",
+      "destination": "NRT"
+    },
+    "path": "/flights",
+    "full_url": "http://localhost:9000/flights?origin=LHR&destination=NRT"
+  },
+  {
+    "timestamp": "2026-03-22T16:33:35.197984",
+    "endpoint": "/weather",
+    "method": "GET",
+    "client_host": "127.0.0.1",
+    "client_port": 42804,
+    "headers": {
+      "host": "localhost:9000",
+      "connection": "keep-alive",
+      "sec-ch-ua-platform": "\"Linux\"",
+      "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36",
+      "sec-ch-ua": "\"Not-A.Brand\";v=\"24\", \"Chromium\";v=\"146\"",
+      "sec-ch-ua-mobile": "?0",
+      "accept": "*/*",
+      "origin": "http://localhost:3000",
+      "sec-fetch-site": "same-site",
+      "sec-fetch-mode": "cors",
+      "sec-fetch-dest": "empty",
+      "referer": "http://localhost:3000/",
+      "accept-encoding": "gzip, deflate, br, zstd",
+      "accept-language": "en-US,en;q=0.9"
+    },
+    "query_params": {
+      "city": "Tokyo"
+    },
+    "path": "/weather",
+    "full_url": "http://localhost:9000/weather?city=Tokyo"
+  },
+  {
+    "timestamp": "2026-03-22T16:33:41.001900",
+    "endpoint": "/flights",
+    "method": "GET",
+    "client_host": "127.0.0.1",
+    "client_port": 52206,
+    "headers": {
+      "host": "localhost:9000",
+      "connection": "keep-alive",
+      "sec-ch-ua-platform": "\"Linux\"",
+      "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36",
+      "sec-ch-ua": "\"Not-A.Brand\";v=\"24\", \"Chromium\";v=\"146\"",
+      "sec-ch-ua-mobile": "?0",
+      "accept": "*/*",
+      "origin": "http://localhost:3000",
+      "sec-fetch-site": "same-site",
+      "sec-fetch-mode": "cors",
+      "sec-fetch-dest": "empty",
+      "referer": "http://localhost:3000/",
+      "accept-encoding": "gzip, deflate, br, zstd",
+      "accept-language": "en-US,en;q=0.9"
+    },
+    "query_params": {
+      "origin": "LHR",
+      "destination": "NRT"
+    },
+    "path": "/flights",
+    "full_url": "http://localhost:9000/flights?origin=LHR&destination=NRT"
+  },
+  {
+    "timestamp": "2026-03-22T16:33:50.205987",
+    "endpoint": "/weather",
+    "method": "GET",
+    "client_host": "127.0.0.1",
+    "client_port": 52208,
+    "headers": {
+      "host": "localhost:9000",
+      "connection": "keep-alive",
+      "sec-ch-ua-platform": "\"Linux\"",
+      "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36",
+      "sec-ch-ua": "\"Not-A.Brand\";v=\"24\", \"Chromium\";v=\"146\"",
+      "sec-ch-ua-mobile": "?0",
+      "accept": "*/*",
+      "origin": "http://localhost:3000",
+      "sec-fetch-site": "same-site",
+      "sec-fetch-mode": "cors",
+      "sec-fetch-dest": "empty",
+      "referer": "http://localhost:3000/",
+      "accept-encoding": "gzip, deflate, br, zstd",
+      "accept-language": "en-US,en;q=0.9"
+    },
+    "query_params": {
+      "city": "Berlin"
+    },
+    "path": "/weather",
+    "full_url": "http://localhost:9000/weather?city=Berlin"
+  },
+  {
+    "timestamp": "2026-03-22T16:41:37.268896",
+    "endpoint": "/weather",
+    "method": "GET",
+    "client_host": "127.0.0.1",
+    "client_port": 50250,
+    "headers": {
+      "host": "localhost:9000",
+      "connection": "keep-alive",
+      "sec-ch-ua-platform": "\"Linux\"",
+      "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36",
+      "sec-ch-ua": "\"Not-A.Brand\";v=\"24\", \"Chromium\";v=\"146\"",
+      "sec-ch-ua-mobile": "?0",
+      "accept": "*/*",
+      "origin": "http://localhost:3000",
+      "sec-fetch-site": "same-site",
+      "sec-fetch-mode": "cors",
+      "sec-fetch-dest": "empty",
+      "referer": "http://localhost:3000/",
+      "accept-encoding": "gzip, deflate, br, zstd",
+      "accept-language": "en-US,en;q=0.9"
+    },
+    "query_params": {
+      "city": "Tokyo"
+    },
+    "path": "/weather",
+    "full_url": "http://localhost:9000/weather?city=Tokyo"
+  },
+  {
+    "timestamp": "2026-03-22T16:41:42.990911",
+    "endpoint": "/flights",
+    "method": "GET",
+    "client_host": "127.0.0.1",
+    "client_port": 45068,
+    "headers": {
+      "host": "localhost:9000",
+      "connection": "keep-alive",
+      "sec-ch-ua-platform": "\"Linux\"",
+      "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36",
+      "sec-ch-ua": "\"Not-A.Brand\";v=\"24\", \"Chromium\";v=\"146\"",
+      "sec-ch-ua-mobile": "?0",
+      "accept": "*/*",
+      "origin": "http://localhost:3000",
+      "sec-fetch-site": "same-site",
+      "sec-fetch-mode": "cors",
+      "sec-fetch-dest": "empty",
+      "referer": "http://localhost:3000/",
+      "accept-encoding": "gzip, deflate, br, zstd",
+      "accept-language": "en-US,en;q=0.9"
+    },
+    "query_params": {
+      "origin": "LHR",
+      "destination": "NRT"
+    },
+    "path": "/flights",
+    "full_url": "http://localhost:9000/flights?origin=LHR&destination=NRT"
+  },
+  {
+    "timestamp": "2026-03-22T16:41:54.595052",
+    "endpoint": "/weather",
+    "method": "GET",
+    "client_host": "127.0.0.1",
+    "client_port": 42860,
+    "headers": {
+      "host": "localhost:9000",
+      "connection": "keep-alive",
+      "sec-ch-ua-platform": "\"Linux\"",
+      "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36",
+      "sec-ch-ua": "\"Not-A.Brand\";v=\"24\", \"Chromium\";v=\"146\"",
+      "sec-ch-ua-mobile": "?0",
+      "accept": "*/*",
+      "origin": "http://localhost:3000",
+      "sec-fetch-site": "same-site",
+      "sec-fetch-mode": "cors",
+      "sec-fetch-dest": "empty",
+      "referer": "http://localhost:3000/",
+      "accept-encoding": "gzip, deflate, br, zstd",
+      "accept-language": "en-US,en;q=0.9"
+    },
+    "query_params": {
+      "city": "Berlin"
+    },
+    "path": "/weather",
+    "full_url": "http://localhost:9000/weather?city=Berlin"
+  },
+  {
+    "timestamp": "2026-03-22T16:41:58.507685",
+    "endpoint": "/weather",
+    "method": "GET",
+    "client_host": "127.0.0.1",
+    "client_port": 42860,
+    "headers": {
+      "host": "localhost:9000",
+      "connection": "keep-alive",
+      "sec-ch-ua-platform": "\"Linux\"",
+      "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36",
+      "sec-ch-ua": "\"Not-A.Brand\";v=\"24\", \"Chromium\";v=\"146\"",
+      "sec-ch-ua-mobile": "?0",
+      "accept": "*/*",
+      "origin": "http://localhost:3000",
+      "sec-fetch-site": "same-site",
+      "sec-fetch-mode": "cors",
+      "sec-fetch-dest": "empty",
+      "referer": "http://localhost:3000/",
+      "accept-encoding": "gzip, deflate, br, zstd",
+      "accept-language": "en-US,en;q=0.9"
+    },
+    "query_params": {
+      "city": "Tokyo"
+    },
+    "path": "/weather",
+    "full_url": "http://localhost:9000/weather?city=Tokyo"
+  },
+  {
+    "timestamp": "2026-03-22T16:42:00.110503",
+    "endpoint": "/flights",
+    "method": "GET",
+    "client_host": "127.0.0.1",
+    "client_port": 42860,
+    "headers": {
+      "host": "localhost:9000",
+      "connection": "keep-alive",
+      "sec-ch-ua-platform": "\"Linux\"",
+      "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36",
+      "sec-ch-ua": "\"Not-A.Brand\";v=\"24\", \"Chromium\";v=\"146\"",
+      "sec-ch-ua-mobile": "?0",
+      "accept": "*/*",
+      "origin": "http://localhost:3000",
+      "sec-fetch-site": "same-site",
+      "sec-fetch-mode": "cors",
+      "sec-fetch-dest": "empty",
+      "referer": "http://localhost:3000/",
+      "accept-encoding": "gzip, deflate, br, zstd",
+      "accept-language": "en-US,en;q=0.9"
+    },
+    "query_params": {
+      "origin": "LHR",
+      "destination": "NRT"
+    },
+    "path": "/flights",
+    "full_url": "http://localhost:9000/flights?origin=LHR&destination=NRT"
+  },
+  {
+    "timestamp": "2026-03-22T16:43:01.197913",
+    "endpoint": "/weather",
+    "method": "GET",
+    "client_host": "127.0.0.1",
+    "client_port": 45518,
+    "headers": {
+      "host": "localhost:9000",
+      "connection": "keep-alive",
+      "sec-ch-ua-platform": "\"Linux\"",
+      "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36",
+      "sec-ch-ua": "\"Not-A.Brand\";v=\"24\", \"Chromium\";v=\"146\"",
+      "sec-ch-ua-mobile": "?0",
+      "accept": "*/*",
+      "origin": "http://localhost:3000",
+      "sec-fetch-site": "same-site",
+      "sec-fetch-mode": "cors",
+      "sec-fetch-dest": "empty",
+      "referer": "http://localhost:3000/",
+      "accept-encoding": "gzip, deflate, br, zstd",
+      "accept-language": "en-US,en;q=0.9"
+    },
+    "query_params": {
+      "city": "Tokyo"
+    },
+    "path": "/weather",
+    "full_url": "http://localhost:9000/weather?city=Tokyo"
+  },
+  {
+    "timestamp": "2026-03-22T16:43:07.001861",
+    "endpoint": "/flights",
+    "method": "GET",
+    "client_host": "127.0.0.1",
+    "client_port": 45530,
+    "headers": {
+      "host": "localhost:9000",
+      "connection": "keep-alive",
+      "sec-ch-ua-platform": "\"Linux\"",
+      "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36",
+      "sec-ch-ua": "\"Not-A.Brand\";v=\"24\", \"Chromium\";v=\"146\"",
+      "sec-ch-ua-mobile": "?0",
+      "accept": "*/*",
+      "origin": "http://localhost:3000",
+      "sec-fetch-site": "same-site",
+      "sec-fetch-mode": "cors",
+      "sec-fetch-dest": "empty",
+      "referer": "http://localhost:3000/",
+      "accept-encoding": "gzip, deflate, br, zstd",
+      "accept-language": "en-US,en;q=0.9"
+    },
+    "query_params": {
+      "origin": "LHR",
+      "destination": "NRT"
+    },
+    "path": "/flights",
+    "full_url": "http://localhost:9000/flights?origin=LHR&destination=NRT"
+  },
+  {
+    "timestamp": "2026-03-22T16:55:40.676519",
+    "endpoint": "/weather",
+    "method": "GET",
+    "client_host": "127.0.0.1",
+    "client_port": 39814,
+    "headers": {
+      "host": "localhost:9000",
+      "connection": "keep-alive",
+      "sec-ch-ua-platform": "\"Linux\"",
+      "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36",
+      "sec-ch-ua": "\"Not-A.Brand\";v=\"24\", \"Chromium\";v=\"146\"",
+      "sec-ch-ua-mobile": "?0",
+      "accept": "*/*",
+      "origin": "http://localhost:3000",
+      "sec-fetch-site": "same-site",
+      "sec-fetch-mode": "cors",
+      "sec-fetch-dest": "empty",
+      "referer": "http://localhost:3000/",
+      "accept-encoding": "gzip, deflate, br, zstd",
+      "accept-language": "en-US,en;q=0.9"
+    },
+    "query_params": {
+      "city": "Tokyo"
+    },
+    "path": "/weather",
+    "full_url": "http://localhost:9000/weather?city=Tokyo"
+  },
+  {
+    "timestamp": "2026-03-22T16:55:46.470369",
+    "endpoint": "/flights",
+    "method": "GET",
+    "client_host": "127.0.0.1",
+    "client_port": 39378,
+    "headers": {
+      "host": "localhost:9000",
+      "connection": "keep-alive",
+      "sec-ch-ua-platform": "\"Linux\"",
+      "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36",
+      "sec-ch-ua": "\"Not-A.Brand\";v=\"24\", \"Chromium\";v=\"146\"",
+      "sec-ch-ua-mobile": "?0",
+      "accept": "*/*",
+      "origin": "http://localhost:3000",
+      "sec-fetch-site": "same-site",
+      "sec-fetch-mode": "cors",
+      "sec-fetch-dest": "empty",
+      "referer": "http://localhost:3000/",
+      "accept-encoding": "gzip, deflate, br, zstd",
+      "accept-language": "en-US,en;q=0.9"
+    },
+    "query_params": {
+      "origin": "LHR",
+      "destination": "NRT"
+    },
+    "path": "/flights",
+    "full_url": "http://localhost:9000/flights?origin=LHR&destination=NRT"
+  },
+  {
+    "timestamp": "2026-03-22T16:55:58.164052",
+    "endpoint": "/weather",
+    "method": "GET",
+    "client_host": "127.0.0.1",
+    "client_port": 43270,
+    "headers": {
+      "host": "localhost:9000",
+      "connection": "keep-alive",
+      "sec-ch-ua-platform": "\"Linux\"",
+      "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36",
+      "sec-ch-ua": "\"Not-A.Brand\";v=\"24\", \"Chromium\";v=\"146\"",
+      "sec-ch-ua-mobile": "?0",
+      "accept": "*/*",
+      "origin": "http://localhost:3000",
+      "sec-fetch-site": "same-site",
+      "sec-fetch-mode": "cors",
+      "sec-fetch-dest": "empty",
+      "referer": "http://localhost:3000/",
+      "accept-encoding": "gzip, deflate, br, zstd",
+      "accept-language": "en-US,en;q=0.9"
+    },
+    "query_params": {
+      "city": "Berlin"
+    },
+    "path": "/weather",
+    "full_url": "http://localhost:9000/weather?city=Berlin"
+  },
+  {
+    "timestamp": "2026-03-22T16:56:02.063902",
+    "endpoint": "/weather",
+    "method": "GET",
+    "client_host": "127.0.0.1",
+    "client_port": 43270,
+    "headers": {
+      "host": "localhost:9000",
+      "connection": "keep-alive",
+      "sec-ch-ua-platform": "\"Linux\"",
+      "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36",
+      "sec-ch-ua": "\"Not-A.Brand\";v=\"24\", \"Chromium\";v=\"146\"",
+      "sec-ch-ua-mobile": "?0",
+      "accept": "*/*",
+      "origin": "http://localhost:3000",
+      "sec-fetch-site": "same-site",
+      "sec-fetch-mode": "cors",
+      "sec-fetch-dest": "empty",
+      "referer": "http://localhost:3000/",
+      "accept-encoding": "gzip, deflate, br, zstd",
+      "accept-language": "en-US,en;q=0.9"
+    },
+    "query_params": {
+      "city": "Tokyo"
+    },
+    "path": "/weather",
+    "full_url": "http://localhost:9000/weather?city=Tokyo"
+  },
+  {
+    "timestamp": "2026-03-22T16:56:03.664934",
+    "endpoint": "/flights",
+    "method": "GET",
+    "client_host": "127.0.0.1",
+    "client_port": 43270,
+    "headers": {
+      "host": "localhost:9000",
+      "connection": "keep-alive",
+      "sec-ch-ua-platform": "\"Linux\"",
+      "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36",
+      "sec-ch-ua": "\"Not-A.Brand\";v=\"24\", \"Chromium\";v=\"146\"",
+      "sec-ch-ua-mobile": "?0",
+      "accept": "*/*",
+      "origin": "http://localhost:3000",
+      "sec-fetch-site": "same-site",
+      "sec-fetch-mode": "cors",
+      "sec-fetch-dest": "empty",
+      "referer": "http://localhost:3000/",
+      "accept-encoding": "gzip, deflate, br, zstd",
+      "accept-language": "en-US,en;q=0.9"
+    },
+    "query_params": {
+      "origin": "LHR",
+      "destination": "NRT"
+    },
+    "path": "/flights",
+    "full_url": "http://localhost:9000/flights?origin=LHR&destination=NRT"
+  },
+  {
+    "timestamp": "2026-03-22T16:57:20.056547",
+    "endpoint": "/weather",
+    "method": "GET",
+    "client_host": "127.0.0.1",
+    "client_port": 39250,
+    "headers": {
+      "host": "localhost:9000",
+      "connection": "keep-alive",
+      "sec-ch-ua-platform": "\"Linux\"",
+      "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36",
+      "sec-ch-ua": "\"Not-A.Brand\";v=\"24\", \"Chromium\";v=\"146\"",
+      "sec-ch-ua-mobile": "?0",
+      "accept": "*/*",
+      "origin": "http://localhost:3000",
+      "sec-fetch-site": "same-site",
+      "sec-fetch-mode": "cors",
+      "sec-fetch-dest": "empty",
+      "referer": "http://localhost:3000/",
+      "accept-encoding": "gzip, deflate, br, zstd",
+      "accept-language": "en-US,en;q=0.9"
+    },
+    "query_params": {
+      "city": "Tokyo"
+    },
+    "path": "/weather",
+    "full_url": "http://localhost:9000/weather?city=Tokyo"
+  },
+  {
+    "timestamp": "2026-03-22T16:57:25.949561",
+    "endpoint": "/flights",
+    "method": "GET",
+    "client_host": "127.0.0.1",
+    "client_port": 44900,
+    "headers": {
+      "host": "localhost:9000",
+      "connection": "keep-alive",
+      "sec-ch-ua-platform": "\"Linux\"",
+      "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36",
+      "sec-ch-ua": "\"Not-A.Brand\";v=\"24\", \"Chromium\";v=\"146\"",
+      "sec-ch-ua-mobile": "?0",
+      "accept": "*/*",
+      "origin": "http://localhost:3000",
+      "sec-fetch-site": "same-site",
+      "sec-fetch-mode": "cors",
+      "sec-fetch-dest": "empty",
+      "referer": "http://localhost:3000/",
+      "accept-encoding": "gzip, deflate, br, zstd",
+      "accept-language": "en-US,en;q=0.9"
+    },
+    "query_params": {
+      "origin": "LHR",
+      "destination": "NRT"
+    },
+    "path": "/flights",
+    "full_url": "http://localhost:9000/flights?origin=LHR&destination=NRT"
+  },
+  {
+    "timestamp": "2026-03-22T16:57:45.128161",
+    "endpoint": "/weather",
+    "method": "GET",
+    "client_host": "127.0.0.1",
+    "client_port": 52058,
+    "headers": {
+      "host": "localhost:9000",
+      "connection": "keep-alive",
+      "sec-ch-ua-platform": "\"Linux\"",
+      "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36",
+      "sec-ch-ua": "\"Not-A.Brand\";v=\"24\", \"Chromium\";v=\"146\"",
+      "sec-ch-ua-mobile": "?0",
+      "accept": "*/*",
+      "origin": "http://localhost:3000",
+      "sec-fetch-site": "same-site",
+      "sec-fetch-mode": "cors",
+      "sec-fetch-dest": "empty",
+      "referer": "http://localhost:3000/",
+      "accept-encoding": "gzip, deflate, br, zstd",
+      "accept-language": "en-US,en;q=0.9"
+    },
+    "query_params": {
+      "city": "Berlin"
+    },
+    "path": "/weather",
+    "full_url": "http://localhost:9000/weather?city=Berlin"
+  },
+  {
+    "timestamp": "2026-03-22T16:57:51.128188",
+    "endpoint": "/weather",
+    "method": "GET",
+    "client_host": "127.0.0.1",
+    "client_port": 46908,
+    "headers": {
+      "host": "localhost:9000",
+      "connection": "keep-alive",
+      "sec-ch-ua-platform": "\"Linux\"",
+      "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36",
+      "sec-ch-ua": "\"Not-A.Brand\";v=\"24\", \"Chromium\";v=\"146\"",
+      "sec-ch-ua-mobile": "?0",
+      "accept": "*/*",
+      "origin": "http://localhost:3000",
+      "sec-fetch-site": "same-site",
+      "sec-fetch-mode": "cors",
+      "sec-fetch-dest": "empty",
+      "referer": "http://localhost:3000/",
+      "accept-encoding": "gzip, deflate, br, zstd",
+      "accept-language": "en-US,en;q=0.9"
+    },
+    "query_params": {
+      "city": "Tokyo"
+    },
+    "path": "/weather",
+    "full_url": "http://localhost:9000/weather?city=Tokyo"
+  },
+  {
+    "timestamp": "2026-03-22T16:57:54.127812",
+    "endpoint": "/flights",
+    "method": "GET",
+    "client_host": "127.0.0.1",
+    "client_port": 46908,
+    "headers": {
+      "host": "localhost:9000",
+      "connection": "keep-alive",
+      "sec-ch-ua-platform": "\"Linux\"",
+      "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36",
+      "sec-ch-ua": "\"Not-A.Brand\";v=\"24\", \"Chromium\";v=\"146\"",
+      "sec-ch-ua-mobile": "?0",
+      "accept": "*/*",
+      "origin": "http://localhost:3000",
+      "sec-fetch-site": "same-site",
+      "sec-fetch-mode": "cors",
+      "sec-fetch-dest": "empty",
+      "referer": "http://localhost:3000/",
+      "accept-encoding": "gzip, deflate, br, zstd",
+      "accept-language": "en-US,en;q=0.9"
+    },
+    "query_params": {
+      "origin": "LHR",
+      "destination": "NRT"
+    },
+    "path": "/flights",
+    "full_url": "http://localhost:9000/flights?origin=LHR&destination=NRT"
+  },
+  {
+    "timestamp": "2026-03-22T16:59:17.762935",
+    "endpoint": "/weather",
+    "method": "GET",
+    "client_host": "127.0.0.1",
+    "client_port": 39870,
+    "headers": {
+      "host": "localhost:9000",
+      "connection": "keep-alive",
+      "sec-ch-ua-platform": "\"Linux\"",
+      "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36",
+      "sec-ch-ua": "\"Not-A.Brand\";v=\"24\", \"Chromium\";v=\"146\"",
+      "sec-ch-ua-mobile": "?0",
+      "accept": "*/*",
+      "origin": "http://localhost:3000",
+      "sec-fetch-site": "same-site",
+      "sec-fetch-mode": "cors",
+      "sec-fetch-dest": "empty",
+      "referer": "http://localhost:3000/",
+      "accept-encoding": "gzip, deflate, br, zstd",
+      "accept-language": "en-US,en;q=0.9"
+    },
+    "query_params": {
+      "city": "Tokyo"
+    },
+    "path": "/weather",
+    "full_url": "http://localhost:9000/weather?city=Tokyo"
+  },
+  {
+    "timestamp": "2026-03-22T16:59:23.566828",
+    "endpoint": "/flights",
+    "method": "GET",
+    "client_host": "127.0.0.1",
+    "client_port": 37638,
+    "headers": {
+      "host": "localhost:9000",
+      "connection": "keep-alive",
+      "sec-ch-ua-platform": "\"Linux\"",
+      "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36",
+      "sec-ch-ua": "\"Not-A.Brand\";v=\"24\", \"Chromium\";v=\"146\"",
+      "sec-ch-ua-mobile": "?0",
+      "accept": "*/*",
+      "origin": "http://localhost:3000",
+      "sec-fetch-site": "same-site",
+      "sec-fetch-mode": "cors",
+      "sec-fetch-dest": "empty",
+      "referer": "http://localhost:3000/",
+      "accept-encoding": "gzip, deflate, br, zstd",
+      "accept-language": "en-US,en;q=0.9"
+    },
+    "query_params": {
+      "origin": "LHR",
+      "destination": "NRT"
+    },
+    "path": "/flights",
+    "full_url": "http://localhost:9000/flights?origin=LHR&destination=NRT"
+  },
+  {
+    "timestamp": "2026-03-22T16:59:35.267090",
+    "endpoint": "/weather",
+    "method": "GET",
+    "client_host": "127.0.0.1",
+    "client_port": 50880,
+    "headers": {
+      "host": "localhost:9000",
+      "connection": "keep-alive",
+      "sec-ch-ua-platform": "\"Linux\"",
+      "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36",
+      "sec-ch-ua": "\"Not-A.Brand\";v=\"24\", \"Chromium\";v=\"146\"",
+      "sec-ch-ua-mobile": "?0",
+      "accept": "*/*",
+      "origin": "http://localhost:3000",
+      "sec-fetch-site": "same-site",
+      "sec-fetch-mode": "cors",
+      "sec-fetch-dest": "empty",
+      "referer": "http://localhost:3000/",
+      "accept-encoding": "gzip, deflate, br, zstd",
+      "accept-language": "en-US,en;q=0.9"
+    },
+    "query_params": {
+      "city": "Berlin"
+    },
+    "path": "/weather",
+    "full_url": "http://localhost:9000/weather?city=Berlin"
+  },
+  {
+    "timestamp": "2026-03-22T16:59:39.273536",
+    "endpoint": "/weather",
+    "method": "GET",
+    "client_host": "127.0.0.1",
+    "client_port": 50880,
+    "headers": {
+      "host": "localhost:9000",
+      "connection": "keep-alive",
+      "sec-ch-ua-platform": "\"Linux\"",
+      "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36",
+      "sec-ch-ua": "\"Not-A.Brand\";v=\"24\", \"Chromium\";v=\"146\"",
+      "sec-ch-ua-mobile": "?0",
+      "accept": "*/*",
+      "origin": "http://localhost:3000",
+      "sec-fetch-site": "same-site",
+      "sec-fetch-mode": "cors",
+      "sec-fetch-dest": "empty",
+      "referer": "http://localhost:3000/",
+      "accept-encoding": "gzip, deflate, br, zstd",
+      "accept-language": "en-US,en;q=0.9"
+    },
+    "query_params": {
+      "city": "Tokyo"
+    },
+    "path": "/weather",
+    "full_url": "http://localhost:9000/weather?city=Tokyo"
+  },
+  {
+    "timestamp": "2026-03-22T16:59:40.917424",
+    "endpoint": "/flights",
+    "method": "GET",
+    "client_host": "127.0.0.1",
+    "client_port": 50880,
+    "headers": {
+      "host": "localhost:9000",
+      "connection": "keep-alive",
+      "sec-ch-ua-platform": "\"Linux\"",
+      "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36",
+      "sec-ch-ua": "\"Not-A.Brand\";v=\"24\", \"Chromium\";v=\"146\"",
+      "sec-ch-ua-mobile": "?0",
+      "accept": "*/*",
+      "origin": "http://localhost:3000",
+      "sec-fetch-site": "same-site",
+      "sec-fetch-mode": "cors",
+      "sec-fetch-dest": "empty",
+      "referer": "http://localhost:3000/",
+      "accept-encoding": "gzip, deflate, br, zstd",
+      "accept-language": "en-US,en;q=0.9"
+    },
+    "query_params": {
+      "origin": "LHR",
+      "destination": "NRT"
+    },
+    "path": "/flights",
+    "full_url": "http://localhost:9000/flights?origin=LHR&destination=NRT"
+  },
+  {
+    "timestamp": "2026-03-22T17:08:52.893687",
+    "endpoint": "/weather",
+    "method": "GET",
+    "client_host": "127.0.0.1",
+    "client_port": 40324,
+    "headers": {
+      "host": "localhost:9000",
+      "connection": "keep-alive",
+      "sec-ch-ua-platform": "\"Linux\"",
+      "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36",
+      "sec-ch-ua": "\"Not-A.Brand\";v=\"24\", \"Chromium\";v=\"146\"",
+      "sec-ch-ua-mobile": "?0",
+      "accept": "*/*",
+      "origin": "http://localhost:3000",
+      "sec-fetch-site": "same-site",
+      "sec-fetch-mode": "cors",
+      "sec-fetch-dest": "empty",
+      "referer": "http://localhost:3000/",
+      "accept-encoding": "gzip, deflate, br, zstd",
+      "accept-language": "en-US,en;q=0.9"
+    },
+    "query_params": {
+      "city": "Tokyo"
+    },
+    "path": "/weather",
+    "full_url": "http://localhost:9000/weather?city=Tokyo"
+  }
+]

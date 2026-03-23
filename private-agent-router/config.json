@@ -1,0 +1,34 @@
+{
+  "relays": [
+    {
+      "name": "relay_a",
+      "url": "https://par-relay-production.up.railway.app",
+      "public_key": "9b768268fbe2ae2f2cf89fc78d66c08865285e02828f783588e80541c292f324"
+    },
+    {
+      "name": "relay_b",
+      "url": "https://par-relay-production-713d.up.railway.app",
+      "public_key": "563731a004a42a34ea02a70522780a18a4189a872fd8fa4b9fb25e8816560840"
+    }
+  ],
+  "demo_service": {
+    "url": "http://127.0.0.1:9000"
+  },
+  "agent_audit_api": {
+    "url": "http://127.0.0.1:8003"
+  },
+  "dashboard": {
+    "url": "http://127.0.0.1:3000"
+  },
+  "chain": {
+    "id": 84532,
+    "rpc": "https://sepolia.base.org",
+    "usdc": "0x036CbD53842c5426634e7929541eC2318f3dCF7e"
+  },
+  "contracts": {
+    "RelayRegistry": "0xa49a8a7e5727b0402e4590cb498b51da03a4d309",
+    "SpendingPolicy": "0x65133639e5d57b2de6703fa701e8cb7565754e6d",
+    "BlindTokenVault": "0x1a78ef103b529c2a6fe8f3db97e1f7692a875092",
+    "AuditLog": "0x78f42b581f590a22ab42d26d35827586597b3dcc"
+  }
+}

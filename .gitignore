@@ -1,0 +1,12 @@
+node_modules/
+.next/
+out/
+__pycache__/
+*.pyc
+.env
+.env.local
+*.db
+broadcast/
+cache/
+memory.md
+.yarn/

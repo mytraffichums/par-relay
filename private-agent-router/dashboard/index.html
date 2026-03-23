@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PAR Dashboard — Private Agent Router</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Private Agent Router</h1>
+    <p class="subtitle">Onion-routed privacy layer for AI agent API calls</p>
+    <div class="controls">
+      <button id="toggle-privacy" class="btn btn-primary">Privacy: ON</button>
+      <button id="clear-logs" class="btn btn-danger">Clear All Logs</button>
+      <span id="status" class="status status-connected">Auto-refresh: 2s</span>
+    </div>
+  </header>
+
+  <main>
+    <section class="panel">
+      <h2>Agent Audit Log <span class="badge">localhost:8003</span></h2>
+      <p class="panel-desc">What the <strong>agent</strong> knows it sent (from local SQLite)</p>
+      <div id="agent-logs" class="log-container">
+        <p class="placeholder">Waiting for data...</p>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>Service Request Log <span class="badge">localhost:9000</span></h2>
+      <p class="panel-desc">What the <strong>destination service</strong> sees (who called it)</p>
+      <div id="service-logs" class="log-container">
+        <p class="placeholder">Waiting for data...</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>PAR — Hackathon Demo | Relay A :8001 | Relay B :8002 | Service :9000 | Hardhat :8545</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
