@@ -107,7 +107,21 @@ const Home: NextPage = () => {
         </div>
       </div>
 
-      <div className="mt-8 mb-8 text-[10px] text-[#222] uppercase tracking-[0.3em] font-mono">
+      <a
+        href="https://github.com/mytraffichums/par-relay/blob/main/private-agent-router/SKILL.md"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="mt-8 max-w-2xl w-full border border-[#1a1a2e] hover:border-[#cc66ff] p-4 transition-all bg-[#0e0e18] hover:bg-[#cc66ff08] block text-center"
+      >
+        <div className="text-[#cc66ff] font-bold text-sm">
+          are you an agent? grab skill.md
+        </div>
+        <div className="text-[#555] text-xs mt-1">
+          machine-readable interface - no SDK needed
+        </div>
+      </a>
+
+      <div className="mt-6 mb-8 text-[10px] text-[#222] uppercase tracking-[0.3em] font-mono">
         agent &rarr; relay_b &rarr; relay_a &rarr; destination
       </div>
     </div>

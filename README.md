@@ -1,6 +1,6 @@
 # Private Agent Router (PAR)
 
-Privacy-as-a-Service for AI agents on Base.
+Privacy-as-a-Service for AI agents on Base Sepolia.
 
 PAR is an onion-encrypted relay network that lets any AI agent route API calls through a 2-hop circuit so no single party sees both who the agent is and what it is requesting. Each relay hop is paid with USDC via the x402 protocol on Base Sepolia.
 
@@ -47,6 +47,11 @@ No single relay sees both the sender and the destination.
 | BlindTokenVault | `0x1a78ef103b529c2a6fe8f3db97e1f7692a875092` |
 | AuditLog | `0x78f42b581f590a22ab42d26d35827586597b3dcc` |
 
+- **RelayRegistry** - Permissionless relay discovery. Operators register their relay URL, NaCl public key, and price per hop. Agents query this to build circuits without trusting a central directory.
+- **SpendingPolicy** - On-chain spending limits for agents. Owners set max-per-transaction, max-per-day, and allowed service lists. The agent's wallet cannot exceed these limits, giving principals control over autonomous spending.
+- **BlindTokenVault** - Anonymous payment tokens via hash commitments. An owner mints tokens by depositing USDC against a hash. Anyone with the preimage can redeem. The service gets paid but cannot link the payment to a specific agent.
+- **AuditLog** - On-chain hop verification. Relays log payload hashes per circuit, creating a verifiable trail that proves routing happened without revealing the request content.
+
 ## Stack
 
 - Python 3.12, FastAPI, PyNaCl, httpx
@@ -61,4 +66,4 @@ See [SKILL.md](private-agent-router/SKILL.md) for the full agent-readable interf
 
 ## Built at
 
-[The Synthesis](https://synthesis.devfolio.co) hackathon - Agent Services on Base track.
+[The Synthesis](https://synthesis.md/) hackathon - Agent Services on Base Sepolia track.
