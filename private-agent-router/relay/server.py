@@ -211,26 +211,28 @@ def _verify_payment_locally(payment_header: str) -> tuple[bool, str]:
 
 @app.post("/forward")
 async def forward(request: Request):
+    body = await request.json()
+
     # x402 payment gate
     if WALLET_ADDRESS:
-        payment_header = request.headers.get("x-payment")
-        if not payment_header:
+        # Accept payment from body field OR header (body preferred for CORS)
+        payment_token = body.get("payment") or request.headers.get("x-payment")
+        if not payment_token:
             req = _build_payment_required()
             encoded = base64.b64encode(json.dumps(req).encode()).decode()
             return JSONResponse(
-                {"error": "payment required", "x402": True},
+                {"error": "payment required", "x402": True, "paymentRequirements": req},
                 status_code=402,
                 headers={"X-PAYMENT-REQUIRED": encoded},
             )
 
-        verified, verify_detail = _verify_payment_locally(payment_header)
+        verified, verify_detail = _verify_payment_locally(payment_token)
         if not verified:
             return JSONResponse(
                 {"error": f"payment verification failed: {verify_detail}"},
                 status_code=402,
             )
 
-    body = await request.json()
     blob = bytes.fromhex(body["payload"])
 
     try:

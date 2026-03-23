@@ -296,10 +296,16 @@ const TryIt: NextPage = () => {
         updateStep("pay", "active");
         setActiveNode("agent");
 
-        const paymentReqHeader = firstResp.headers.get("x-payment-required");
-        if (!paymentReqHeader) throw new Error("No x-payment-required header");
-
-        const requirement = JSON.parse(atob(paymentReqHeader));
+        // Read payment requirements from body (preferred) or header
+        const firstData = await firstResp.json();
+        let requirement: any;
+        if (firstData.paymentRequirements) {
+          requirement = firstData.paymentRequirements;
+        } else {
+          const paymentReqHeader = firstResp.headers.get("x-payment-required");
+          if (!paymentReqHeader) throw new Error("No payment requirements in response");
+          requirement = JSON.parse(atob(paymentReqHeader));
+        }
         const usdcAmount = (Number(requirement.maxAmountRequired) / 1e6).toFixed(4);
         addLog(`  payment: ${usdcAmount} USDC to ${requirement.payTo?.slice(0, 10)}...`, "#cc66ff", 1);
 
@@ -372,16 +378,13 @@ const TryIt: NextPage = () => {
         // ── 5. Retry with payment ──
         updateStep("retry", "active");
         showPacket(0, 1, "#00ccff");
-        addLog("retrying with X-PAYMENT header...", "#00ccff");
+        addLog("retrying with payment...", "#00ccff");
         await sleep(300);
 
         const paidResp = await fetch(`${relayB.url}/forward`, {
           method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            "X-PAYMENT": paymentToken,
-          },
-          body: JSON.stringify(forwardPayload),
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ ...forwardPayload, payment: paymentToken }),
         });
 
         showPacket(1, 2, "#ffcc00");
