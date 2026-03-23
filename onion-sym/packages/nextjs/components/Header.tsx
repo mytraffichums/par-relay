@@ -16,12 +16,11 @@ type HeaderMenuLink = {
 
 export const menuLinks: HeaderMenuLink[] = [
   { label: "home", href: "/", shortcut: "~" },
-  { label: "demo", href: "/demo", shortcut: "r" },
-  { label: "dashboard", href: "/dashboard", shortcut: "d" },
+  { label: "try it", href: "/demo", shortcut: "r" },
   { label: "spending", href: "/spending", shortcut: "s" },
   { label: "tokens", href: "/tokens", shortcut: "t" },
   { label: "audit", href: "/audit", shortcut: "a" },
-  { label: "debug", href: "/debug", shortcut: "x" },
+  { label: "contracts", href: "/debug", shortcut: "x" },
 ];
 
 export const HeaderMenuLinks = () => {
@@ -89,7 +88,7 @@ export const Header = () => {
       </div>
       <div className="navbar-end grow mr-4 gap-2">
         <div className="text-[10px] text-[#333] uppercase tracking-wider hidden md:block">
-          anvil:8545
+          base sepolia
         </div>
         <RainbowKitCustomConnectButton />
         {isLocalNetwork && <FaucetButton />}

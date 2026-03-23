@@ -39,58 +39,72 @@ const Home: NextPage = () => {
         <div className="text-[#555] mt-4">$ par --help</div>
       </div>
 
-      <div className="mt-6 max-w-2xl w-full grid grid-cols-1 sm:grid-cols-2 gap-3">
+      <div className="mt-6 max-w-2xl w-full">
         <Link
-          href="/dashboard"
-          className="group border border-[#1a1a2e] hover:border-[#00ff88] p-4 transition-all bg-[#0e0e18] hover:glow-green"
+          href="/demo"
+          className="group border border-[#00ff88] hover:border-[#00ff88] p-5 transition-all bg-[#0e0e18] hover:bg-[#00ff8808] block mb-3"
         >
-          <div className="text-[10px] text-[#333] uppercase tracking-[0.2em]">01</div>
-          <div className="text-[#00ff88] font-bold text-sm mt-1 group-hover:text-[#00ff88]">
-            /dashboard
+          <div className="text-[#00ff88] font-bold text-sm group-hover:text-[#00ff88]">
+            ▶ try it — send a private request now
           </div>
           <div className="text-[#555] text-xs mt-2 leading-relaxed">
-            live split-view: your audit trail vs what the service sees. privacy on/off comparison.
+            connect your wallet, pick a URL, and route it through the onion relay network. pay 0.01 USDC per hop on Base Sepolia. see the decrypted response — the service never sees your IP.
           </div>
         </Link>
 
-        <Link
-          href="/spending"
-          className="group border border-[#1a1a2e] hover:border-[#ffcc00] p-4 transition-all bg-[#0e0e18]"
-        >
-          <div className="text-[10px] text-[#333] uppercase tracking-[0.2em]">02</div>
-          <div className="text-[#ffcc00] font-bold text-sm mt-1">
-            /spending
-          </div>
-          <div className="text-[#555] text-xs mt-2 leading-relaxed">
-            on-chain spending policy. max per tx, max per day, allowed services. agent cannot exceed.
-          </div>
-        </Link>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <Link
+            href="/spending"
+            className="group border border-[#1a1a2e] hover:border-[#ffcc00] p-4 transition-all bg-[#0e0e18]"
+          >
+            <div className="text-[10px] text-[#333] uppercase tracking-[0.2em]">01</div>
+            <div className="text-[#ffcc00] font-bold text-sm mt-1">
+              /spending
+            </div>
+            <div className="text-[#555] text-xs mt-2 leading-relaxed">
+              on-chain spending policy. max per tx, max per day, allowed services. agent cannot exceed.
+            </div>
+          </Link>
 
-        <Link
-          href="/tokens"
-          className="group border border-[#1a1a2e] hover:border-[#00ccff] p-4 transition-all bg-[#0e0e18]"
-        >
-          <div className="text-[10px] text-[#333] uppercase tracking-[0.2em]">03</div>
-          <div className="text-[#00ccff] font-bold text-sm mt-1">
-            /tokens
-          </div>
-          <div className="text-[#555] text-xs mt-2 leading-relaxed">
-            blind payment tokens. hash-commitment scheme. service gets paid, no idea who paid.
-          </div>
-        </Link>
+          <Link
+            href="/tokens"
+            className="group border border-[#1a1a2e] hover:border-[#00ccff] p-4 transition-all bg-[#0e0e18]"
+          >
+            <div className="text-[10px] text-[#333] uppercase tracking-[0.2em]">02</div>
+            <div className="text-[#00ccff] font-bold text-sm mt-1">
+              /tokens
+            </div>
+            <div className="text-[#555] text-xs mt-2 leading-relaxed">
+              blind payment tokens. hash-commitment scheme. service gets paid, no idea who paid.
+            </div>
+          </Link>
 
-        <Link
-          href="/audit"
-          className="group border border-[#1a1a2e] hover:border-[#ff8800] p-4 transition-all bg-[#0e0e18]"
-        >
-          <div className="text-[10px] text-[#333] uppercase tracking-[0.2em]">04</div>
-          <div className="text-[#ff8800] font-bold text-sm mt-1">
-            /audit
-          </div>
-          <div className="text-[#555] text-xs mt-2 leading-relaxed">
-            on-chain audit log. payload hashes per circuit. proves routing without revealing data.
-          </div>
-        </Link>
+          <Link
+            href="/audit"
+            className="group border border-[#1a1a2e] hover:border-[#ff8800] p-4 transition-all bg-[#0e0e18]"
+          >
+            <div className="text-[10px] text-[#333] uppercase tracking-[0.2em]">03</div>
+            <div className="text-[#ff8800] font-bold text-sm mt-1">
+              /audit
+            </div>
+            <div className="text-[#555] text-xs mt-2 leading-relaxed">
+              on-chain audit log. payload hashes per circuit. proves routing without revealing data.
+            </div>
+          </Link>
+
+          <Link
+            href="/debug"
+            className="group border border-[#1a1a2e] hover:border-[#555] p-4 transition-all bg-[#0e0e18]"
+          >
+            <div className="text-[10px] text-[#333] uppercase tracking-[0.2em]">04</div>
+            <div className="text-[#555] font-bold text-sm mt-1">
+              /debug
+            </div>
+            <div className="text-[#555] text-xs mt-2 leading-relaxed">
+              interact directly with deployed contracts on Base Sepolia.
+            </div>
+          </Link>
+        </div>
       </div>
 
       <div className="mt-8 mb-8 text-[10px] text-[#222] uppercase tracking-[0.3em] font-mono">
