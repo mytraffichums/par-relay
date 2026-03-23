@@ -72,6 +72,19 @@ function decryptLayer(mySecretKey: Uint8Array, blob: Uint8Array): Uint8Array {
   return plaintext;
 }
 
+function maskIp(ip: string): string {
+  const parts = ip.split(".");
+  if (parts.length === 4) {
+    return `${parts[0]}.${parts[1]}.***.***`;
+  }
+  // IPv6 fallback
+  const segments = ip.split(":");
+  if (segments.length > 2) {
+    return `${segments[0]}:${segments[1]}:****:****`;
+  }
+  return ip.slice(0, 4) + "****";
+}
+
 function uint8ToHex(bytes: Uint8Array): string {
   return Array.from(bytes).map(b => b.toString(16).padStart(2, "0")).join("");
 }
@@ -175,7 +188,17 @@ const TryIt: NextPage = () => {
   const [packetTo, setPacketTo] = useState(-1);
   const [packetColor, setPacketColor] = useState("#00ff88");
   const [packetVisible, setPacketVisible] = useState(false);
+  const [userIp, setUserIp] = useState<string | null>(null);
+  const [relayIp, setRelayIp] = useState<string | null>(null);
   const logRef = useRef<HTMLDivElement>(null);
+
+  // Fetch user's real IP on mount
+  useEffect(() => {
+    fetch("https://api.ipify.org?format=json")
+      .then(r => r.json())
+      .then(data => setUserIp(data.ip))
+      .catch(() => {});
+  }, []);
 
   const addLog = useCallback((text: string, color = "#c8c8d0", indent = 0) => {
     setLogs(prev => [...prev, { text, color, indent }]);
@@ -204,6 +227,7 @@ const TryIt: NextPage = () => {
 
     setRunning(true);
     setResult(null);
+    setRelayIp(null);
     setLogs([]);
     setPacketVisible(false);
     setActiveNode("agent");
@@ -424,11 +448,20 @@ const TryIt: NextPage = () => {
         const responseText = new TextDecoder().decode(responseBlob);
         const responseJson = JSON.parse(responseText);
 
+        // Try to extract relay IP from response body
+        let extractedRelayIp: string | null = null;
+        try {
+          const parsed = JSON.parse(responseJson.body);
+          if (parsed.origin) extractedRelayIp = parsed.origin;
+        } catch {}
+        if (extractedRelayIp) setRelayIp(extractedRelayIp);
+
         addLog("", "#333");
         addLog("════════════════════════════════════", "#00ff88");
         addLog("  request complete", "#00ff88");
         addLog(`  status: ${responseJson.status}`, "#00ff88");
-        addLog("  service saw RELAY IP, not yours", "#00ff88");
+        if (userIp) addLog(`  your ip: ${maskIp(userIp)}`, "#cc66ff");
+        if (extractedRelayIp) addLog(`  service saw: ${extractedRelayIp}`, "#00ff88");
         addLog("  payment: 0.01 USDC on Base Sepolia", "#cc66ff");
         addLog("════════════════════════════════════", "#00ff88");
 
@@ -672,6 +705,27 @@ const TryIt: NextPage = () => {
           </div>
         </div>
       </div>
+
+      {/* IP comparison */}
+      {result && (userIp || relayIp) && (
+        <div className="border border-[#1a1a2e] bg-[#0e0e18] p-4">
+          <div className="text-[10px] text-[#555] uppercase tracking-wider mb-3">privacy proof</div>
+          <div className="flex items-center gap-6 flex-wrap">
+            {userIp && (
+              <div>
+                <div className="text-[10px] text-[#555] uppercase tracking-wider mb-1">your ip</div>
+                <div className="text-sm text-[#cc66ff] font-mono">{maskIp(userIp)}</div>
+              </div>
+            )}
+            {relayIp && (
+              <div>
+                <div className="text-[10px] text-[#555] uppercase tracking-wider mb-1">service saw</div>
+                <div className="text-sm text-[#00ff88] font-mono">{relayIp}</div>
+              </div>
+            )}
+          </div>
+        </div>
+      )}
 
       {/* Response result */}
       {result && (
