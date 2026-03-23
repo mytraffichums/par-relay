@@ -153,7 +153,7 @@ async def _verify_payment(payment_header: str) -> tuple[bool, str]:
         }
         print(f"[{RELAY_NAME}] x402 verify request: {json.dumps(verify_body, indent=2)[:500]}")
 
-        async with httpx.AsyncClient(timeout=15) as client:
+        async with httpx.AsyncClient(timeout=15, follow_redirects=True) as client:
             resp = await client.post(
                 f"{FACILITATOR_URL}/verify",
                 json=verify_body,
