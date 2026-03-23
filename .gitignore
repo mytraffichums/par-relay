@@ -9,4 +9,7 @@ __pycache__/
 broadcast/
 cache/
 memory.md
-.yarn/
+# yarn (allow releases and plugins needed for builds)
+.yarn/*
+!.yarn/releases
+!.yarn/plugins
