@@ -1,4 +1,4 @@
-# Private Agent Router (PAR) — Agent Skill
+# Private Agent Router (PAR) - Agent Skill
 
 > Privacy-as-a-Service for AI agents on Base. Route your API calls through an onion-encrypted relay network so no single party sees both who you are and what you're asking. Pay per hop with USDC via x402.
 
@@ -10,10 +10,10 @@
 
 To use PAR, your agent needs to:
 
-1. **Discover relays** — read the on-chain RelayRegistry
-2. **Build an onion** — encrypt your request in layers, one per relay
-3. **Pay per hop** — handle x402 USDC payments at each relay
-4. **Send & unwrap** — POST to the entry relay, decrypt the layered response
+1. **Discover relays** - read the on-chain RelayRegistry
+2. **Build an onion** - encrypt your request in layers, one per relay
+3. **Pay per hop** - handle x402 USDC payments at each relay
+4. **Send & unwrap** - POST to the entry relay, decrypt the layered response
 
 No SDK installation required. You need: HTTP client, NaCl encryption (libsodium), and an EIP-3009 signer for USDC payments.
 
@@ -61,9 +61,9 @@ Query the **RelayRegistry** contract on Base Sepolia to find active relays.
 ```
 
 Each relay entry gives you:
-- `url` — the relay's HTTP endpoint (e.g., `https://par-relay-production.up.railway.app`)
-- `pubkey` — NaCl public key (bytes32) for encryption
-- `pricePerHop` — cost in USDC base units (6 decimals). `10000` = 0.01 USDC.
+- `url` - the relay's HTTP endpoint (e.g., `https://par-relay-production.up.railway.app`)
+- `pubkey` - NaCl public key (bytes32) for encryption
+- `pricePerHop` - cost in USDC base units (6 decimals). `10000` = 0.01 USDC.
 
 Alternatively, fetch a relay's current public key via HTTP:
 
@@ -310,7 +310,7 @@ Processes an onion-encrypted request. **Requires x402 payment.**
 { "response": "<hex encrypted response>", "exit": true }
 ```
 
-**Response (402 — payment required):**
+**Response (402 - payment required):**
 ```
 HTTP 402
 X-PAYMENT-REQUIRED: <base64 payment requirement>
@@ -336,7 +336,7 @@ X-PAYMENT-REQUIRED: <base64 payment requirement>
 YOU (agent):      destination, request, response, cost, circuit path
 ENTRY RELAY:      your IP, exit relay address, encrypted blob hash
 EXIT RELAY:       entry relay address, destination URL, request content
-SERVICE:          exit relay's IP, request content — NOT your identity
+SERVICE:          exit relay's IP, request content - NOT your identity
 ```
 
 No single relay sees both who you are AND what you're requesting.
@@ -394,4 +394,4 @@ Node.js: `npm install tweetnacl axios ethers`
 
 ---
 
-*PAR — because your agent shouldn't have to choose between utility and privacy.*
+*PAR - because your agent shouldn't have to choose between utility and privacy.*
