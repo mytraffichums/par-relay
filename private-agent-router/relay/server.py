@@ -20,6 +20,8 @@ from pathlib import Path
 import httpx
 import nacl.public
 import nacl.utils
+from eth_account import Account
+from eth_account.messages import encode_typed_data
 from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
@@ -132,41 +134,74 @@ def _build_payment_required() -> dict:
     }
 
 
-async def _verify_payment(payment_header: str) -> tuple[bool, str]:
-    """Verify x402 payment via the facilitator. Returns (valid, detail)."""
+def _verify_payment_locally(payment_header: str) -> tuple[bool, str]:
+    """Verify x402 payment by recovering the EIP-712 signer locally."""
     if not WALLET_ADDRESS:
         return True, "no wallet configured"
 
     try:
         payment_payload = json.loads(base64.b64decode(payment_header))
+        inner = payment_payload.get("payload", {})
+        signature = inner.get("signature", "")
+        auth = inner.get("authorization", {})
 
-        # Build requirement matching what the client signed — use the nonce
-        # from the client's payment so the facilitator sees a consistent pair.
-        requirement = _build_payment_required()
-        client_nonce = payment_payload.get("payload", {}).get("authorization", {}).get("nonce", "")
-        if client_nonce:
-            requirement["nonce"] = client_nonce
+        if not signature or not auth:
+            return False, "missing signature or authorization"
 
-        verify_body = {
-            "paymentPayload": payment_payload,
-            "paymentRequirements": requirement,
+        # Verify amount meets our price
+        value = int(auth.get("value", "0"))
+        if value < int(PRICE_PER_HOP):
+            return False, f"insufficient payment: {value} < {PRICE_PER_HOP}"
+
+        # Verify payTo matches our wallet
+        pay_to = auth.get("to", "").lower()
+        if pay_to != WALLET_ADDRESS.lower():
+            return False, f"wrong payTo: {pay_to} != {WALLET_ADDRESS.lower()}"
+
+        # Recover signer from EIP-712 typed data
+        domain_data = {
+            "name": "USD Coin",
+            "version": "2",
+            "chainId": 84532,
+            "verifyingContract": USDC_BASE_SEPOLIA,
         }
-        print(f"[{RELAY_NAME}] x402 verify request: {json.dumps(verify_body, indent=2)[:500]}")
+        message_types = {
+            "TransferWithAuthorization": [
+                {"name": "from", "type": "address"},
+                {"name": "to", "type": "address"},
+                {"name": "value", "type": "uint256"},
+                {"name": "validAfter", "type": "uint256"},
+                {"name": "validBefore", "type": "uint256"},
+                {"name": "nonce", "type": "bytes32"},
+            ],
+        }
 
-        async with httpx.AsyncClient(timeout=15, follow_redirects=True) as client:
-            resp = await client.post(
-                f"{FACILITATOR_URL}/verify",
-                json=verify_body,
-            )
-        resp_body = resp.text
-        print(f"[{RELAY_NAME}] x402 verify response: {resp.status_code} {resp_body[:300]}")
+        # Convert nonce to bytes32
+        nonce_hex = auth["nonce"]
+        if nonce_hex.startswith("0x"):
+            nonce_hex = nonce_hex[2:]
+        nonce_bytes = bytes.fromhex(nonce_hex.zfill(64))
 
-        if resp.status_code == 200:
-            result = resp.json()
-            if result.get("isValid", False):
-                return True, "valid"
-            return False, result.get("invalidReason", "unknown")
-        return False, f"facilitator returned {resp.status_code}: {resp_body[:200]}"
+        message_data = {
+            "from": auth["from"],
+            "to": auth["to"],
+            "value": int(auth["value"]),
+            "validAfter": int(auth["validAfter"]),
+            "validBefore": int(auth["validBefore"]),
+            "nonce": nonce_bytes,
+        }
+
+        signable = encode_typed_data(
+            domain_data, message_types, message_data
+        )
+        recovered = Account.recover_message(signable, signature=signature)
+
+        if recovered.lower() != auth["from"].lower():
+            return False, f"signature mismatch: recovered {recovered}, expected {auth['from']}"
+
+        print(f"[{RELAY_NAME}] x402 payment verified: {value} from {recovered}")
+        return True, "valid"
+
     except Exception as exc:
         import traceback
         print(f"[{RELAY_NAME}] x402 verify failed: {exc}")
@@ -188,7 +223,7 @@ async def forward(request: Request):
                 headers={"X-PAYMENT-REQUIRED": encoded},
             )
 
-        verified, verify_detail = await _verify_payment(payment_header)
+        verified, verify_detail = _verify_payment_locally(payment_header)
         if not verified:
             return JSONResponse(
                 {"error": f"payment verification failed: {verify_detail}"},
